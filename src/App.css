@@ -1,38 +1,35 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 300px;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.guess-input {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.guess-input > button {
+  flex: 1;
+  padding-block: 1rem;
+  transition: background-color 0.1s ease-in, transform 0.1s ease-in;
+  border: none;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.guess-input > button:hover {
+  cursor: pointer;
+  background-color: darkgray;
+  border: none;
+  transform: translateY(-2px);
+}
+
+.guess-input > button:active {
+  cursor: pointer;
+  background-color: darkgray;
+  border: none;
+  transform: translateY(0);
 }

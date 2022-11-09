@@ -19,6 +19,15 @@ function App() {
     setCorrectAnswer(answers[Math.floor(Math.random() * answers.length)]);
   };
 
+  const resetGameWithTimeout = () => {
+    return setTimeout(() => {
+      setUserGuess(null);
+      setIsUserWinner(null);
+      setCorrectAnswer(null);
+      generateNewQuestion();
+    }, 2000);
+  };
+
   const handleGuessClick = (buttonValue) => {
     setUserGuess(buttonValue);
   };
@@ -38,12 +47,8 @@ function App() {
 
   useEffect(() => {
     if (isUserWinner === null) return;
-    let timeoutId = setTimeout(() => {
-      setUserGuess(null);
-      setIsUserWinner(null);
-      setCorrectAnswer(null);
-      generateNewQuestion();
-    }, 2000);
+
+    let timeoutId = resetGameWithTimeout();
     return () => clearTimeout(timeoutId);
   }, [isUserWinner]);
 

@@ -1,0 +1,40 @@
+.debug {
+  background-color: #333;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+}
+
+.result {
+  background-color: #333;
+  font-size: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.3s, transform 1s ease-in-out;
+  position: absolute;
+  transform: scale(2);
+}
+
+.result[data-active="true"] {
+  padding-inline: 0.5em;
+  padding-block: 0.25em;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.win {
+  color: #4caf50;
+}
+
+.lose {
+  color: #f44336;
+}
